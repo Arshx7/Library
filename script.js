@@ -2,23 +2,21 @@ const popUp = document.querySelector(".pop-up");
 const submit = document.querySelector("#submit");
 const form = document.querySelector("form");
 const add = document.querySelector(".add");
+const cancelForm = document.querySelector(".cancel-form");
+
 add.addEventListener("click", () => {
     displayForm();
 })
-const cancelForm = document.querySelector(".cancel-form");
+
 cancelForm.addEventListener("click",() => {
     popUp.close();
 })
 
-
-
 function displayForm() {
     form.reset();
-    popUp.showModal();
-    
-    
-    
+    popUp.showModal();   
 }
+
 submit.addEventListener("click", (event) => {
         event.preventDefault();
 
@@ -28,15 +26,15 @@ submit.addEventListener("click", (event) => {
         const formRead = document.querySelector("#read").checked;
 
         const book = new Book(formTitle, formAuthor, formpage, formRead);
+
         addBookToLibrary(book);
         popUp.close();
         displayBooks();
     });
-function displayBooks() {
 
+function displayBooks() {
     const container = document.querySelector(".container");
     container.innerHTML = "";
-
 
     myLibrary.forEach ((book,index) => {
         const card = document.createElement("div");
@@ -45,15 +43,14 @@ function displayBooks() {
         const title = document.createElement("p");
         const author = document.createElement("p");
         const pages = document.createElement("p");
-
         const readBtn = document.createElement("button");
         const removeBtn = document.createElement("button");
 
-        title.textContent = book.title;
-        author.textContent = book.author;
-        pages.textContent = book.pages;
-        readBtn.textContent = book.read ? "READ" : "NOT READ";
-        removeBtn.textContent = "REMOVE";
+        title.innerHTML = `<b>Title:</b> ${book.title}`;
+        author.innerHTML = `<b>Author: </b>${book.author}`;
+        pages.innerHTML = `<b>Pages: </b> ${book.pages}`;
+        readBtn.innerHTML = book.read ? "READ" : "NOT READ";
+        removeBtn.innerHTML = "REMOVE";
 
 
         card.appendChild(title);
@@ -71,8 +68,7 @@ function displayBooks() {
             removeBookFromLibrary(index);
             displayBooks();
         })
-    })
-    
+    })  
 }
 
 function Book(title, author,pages,read) {
@@ -80,7 +76,6 @@ function Book(title, author,pages,read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-
 }
 
 Book.prototype.toggleReadStatus = function () {
@@ -100,16 +95,6 @@ function removeBookFromLibrary(index) {
 }
 
 
-const book1 = new Book("The Hobbit","J.R.R. Tolkien",295,false);
-const book2 = new Book("xyz","J.R.R. Tolkien",500,true);
 
 
 
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-
-
-
-
-
-displayBooks();
