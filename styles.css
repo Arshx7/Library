@@ -1,0 +1,108 @@
+
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "SUSE" , sans-serif;
+    
+}
+
+body {
+    background-color: #faf5ff;
+    --color-button:#581c87;
+    --color-text:#581c87;
+}
+
+.heading{
+    text-align: center;
+    padding: 30px;
+    font-size: 25px;
+    color: var(--color-text);  
+}
+
+.add{
+    width: 7rem;
+    font-size: 40px;
+    display: block;
+    margin-left: auto;   
+    margin-right: auto;
+    margin-bottom: 20px;
+    background-color: #d8b4fe;
+    color:var(--color-text);
+    border-radius: 25px;
+    border: none;
+}
+
+.pop-up {
+    margin: auto;
+    width: 50rem;
+    height: 25rem;
+    color:var(--color-text);
+    background-color: #f3e8ff;
+    border: none;
+    border-radius: 15px;   
+}
+
+.pop-up form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+    padding: 14px;       
+}
+
+form input{
+    height: 2rem;
+    align-self: center;
+    width: 30rem;
+    margin:5px;
+    padding: 10px;
+    background-color: #e9d5ff;
+    border: 0;
+    border-radius: 15px;
+    cursor: pointer;   
+}
+
+input::placeholder{
+    padding: 3px;
+}
+
+.container{
+    border: 4px solid;
+    display: grid;
+    padding: 50px;
+    margin: 50px;
+    background-color: #f3e8ff;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    border: none;
+    border-radius: 15px;
+}
+
+.card {
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    background-color: #e9d5ff;
+    font-size: 20px;
+    color:var(--color-text);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #a36acf70;
+  }
+
+  button {
+    font-size: 1.2rem;
+    margin: 10px 15px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #d8b4fe;
+    color:var(--color-button);
+    border: none;
+  }
+
+  button:hover {
+    background-color: #a36acf;
+  }
